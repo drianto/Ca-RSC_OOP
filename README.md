@@ -10,7 +10,7 @@ Aplikasi PhoneBook ini dibuat untuk mengelola informasi kontak. Pengguna dapat m
   
 ## Struktur Kode  
 Aplikasi ini terdiri dari dua kelas utama:  
-1. **Contact:** Kelas ini menyimpan informasi tentang kontak, termasuk nama dan nomor telepon.  
+1. **Contact:** Kelas ini menyimpan informasi tentang kontak, termasuk nama, nomor telepon, dan asal kota.  
 2. **PhoneBook:** Kelas ini mengelola daftar kontak dan menyediakan metode untuk menambah, mencari, dan menampilkan kontak.  
   
 ## Cara Menjalankan  
@@ -34,6 +34,7 @@ Setelah aplikasi dijalankan, pengguna akan melihat menu dengan pilihan berikut:
 1. **ADD:** Menambahkan kontak baru.  
 2. **SEARCH:** Menampilkan nama daftar kontak dan mencari berdasarkan nama.  
 3. **EXIT:** Keluar dari aplikasi.
+Masukkan nomor perintah untuk melakukan perintah sesuai daftar yang tertera.
 
 ## Author  
 Andri Nurdianto - 13523145
