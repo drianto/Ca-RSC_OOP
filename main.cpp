@@ -5,24 +5,22 @@ using namespace std;
 
 class Contact{
     public:
-        Contact() : namaKontak(""), nomorTelepon("") {}
+        Contact() : namaKontak(""), nomorTelepon(""), asalKota("") {}
 
-        Contact(string inputKontak, string inputNomor){
+        Contact(string inputKontak, string inputNomor, string inputKota){
             Contact::namaKontak = inputKontak;
-            Contact::nomorTelepon = inputNomor; 
+            Contact::nomorTelepon = inputNomor;
+            Contact::asalKota = inputKota;
         }
 
         string getNamaKontak(){
             return namaKontak;
         }
 
-        string getNomorTelepon(){
-            return nomorTelepon;
-        }
-
         void displayInfoKontak(){
             cout << "Nama Kontak: " << namaKontak << endl;
             cout << "Nomor Telepon: " << nomorTelepon << endl;
+            cout << "Kota Asal: " << asalKota << endl;
         }
 
         void displayNamaKontak(){
@@ -32,15 +30,16 @@ class Contact{
     private:
         string namaKontak;
         string nomorTelepon;
+        string asalKota;
 };
 
 class PhoneBook{
     public:
         PhoneBook() : jumlah(0) {};
 
-        void addKontak(string inputNama, string inputNomor){  
+        void addKontak(string inputNama, string inputNomor, string inputKota){  
             if (jumlah < 8) {  
-                daftarKontak[jumlah] = Contact(inputNama, inputNomor);  
+                daftarKontak[jumlah] = Contact(inputNama, inputNomor, inputKota);  
                 jumlah++;  
                 cout << "Kontak berhasil ditambahkan." << endl;  
             }else{  
@@ -48,7 +47,7 @@ class PhoneBook{
                 for (int i = 1; i < 8; i++) {  
                     daftarKontak[i - 1] = daftarKontak[i];  
                 }  
-                daftarKontak[7] = Contact(inputNama, inputNomor);
+                daftarKontak[7] = Contact(inputNama, inputNomor, inputKota);
                 cout << "Kontak terlama dihapus." << endl;  
             }  
         }  
@@ -87,12 +86,14 @@ int main(int argc, char const *argv[]){
         cin >> pilihan;  
   
         if (pilihan == 1) {  
-            string nama, nomor;  
+            string nama, nomor, kota, tanggal;  
             cout << "Masukkan nama kontak: ";  
             cin >> nama;  
             cout << "Masukkan nomor telepon: ";  
-            cin >> nomor;  
-            phoneBook.addKontak(nama, nomor);  
+            cin >> nomor;
+            cout << "Masukkan kota: ";
+            cin >> kota;
+            phoneBook.addKontak(nama, nomor, kota);  
         } else if (pilihan == 2) {  
             string nama;
             phoneBook.displayDaftarKontak();  
